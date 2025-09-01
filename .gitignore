@@ -1,0 +1,4 @@
+retail.db
+*.db
+*.bak
+.DS_Store

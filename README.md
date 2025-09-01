@@ -48,14 +48,15 @@ Average order value by region
 
 Revenue lost to discounts
 
-Screenshots
-SQLite overview
+## Screenshots
 
+**SQLite overview**
 
+![SQLite overview](https://raw.githubusercontent.com/HamzahAlsalmi/sql-retail-analytics/main/images/overview.png)
 
-Top products by revenue
+**Top products by revenue**
 
-
+![Top products by revenue](https://raw.githubusercontent.com/HamzahAlsalmi/sql-retail-analytics/main/images/top_products.png)
 
 Project Structure
 pgsql

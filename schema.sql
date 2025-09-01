@@ -34,11 +34,13 @@ CREATE TABLE orders (
   region_id   INTEGER REFERENCES regions(region_id)
 );
 
+DROP TABLE IF EXISTS order_items;
 CREATE TABLE order_items (
-  order_id    INTEGER NOT NULL REFERENCES orders(order_id),
-  product_id  INTEGER NOT NULL REFERENCES products(product_id),
-  unit_price  NUMERIC NOT NULL CHECK (unit_price >= 0),
-  quantity    INTEGER NOT NULL CHECK (quantity > 0),
-  discount    NUMERIC NOT NULL DEFAULT 0 CHECK (discount >= 0 AND discount <= 1),
-  PRIMARY KEY (order_id, product_id)
+  line_id    INTEGER PRIMARY KEY,                 -- unique row id
+  order_id   INTEGER NOT NULL REFERENCES orders(order_id),
+  product_id INTEGER NOT NULL REFERENCES products(product_id),
+  unit_price NUMERIC NOT NULL CHECK (unit_price >= 0),
+  quantity   INTEGER NOT NULL CHECK (quantity > 0),
+  discount   NUMERIC NOT NULL DEFAULT 0 CHECK (discount >= 0 AND discount <= 1)
 );
+

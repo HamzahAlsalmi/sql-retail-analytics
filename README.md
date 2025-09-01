@@ -40,3 +40,13 @@ Built as a portfolio project to showcase SQL skills in data modeling, joins, CTE
 <img width="705" height="433" alt="Screenshot 2025-09-01 at 2 22 51 PM" src="https://github.com/user-attachments/assets/0b929fd1-fa90-4f5e-baac-d55a9f6c48f4" />
 
 
+
+## Screenshots
+
+**SQLite overview**
+
+![SQLite overview](images/overview.png)
+
+**Top products by revenue**
+
+![Top products by revenue](images/top_products.png)

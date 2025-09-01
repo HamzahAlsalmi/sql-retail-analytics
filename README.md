@@ -13,9 +13,9 @@ Includes schema, sample data, and queries to answer key business questions.
 ---
 
 ## Files
-- `schema.sql` — database tables
-- `seed.sql` — sample data
-- `queries/analysis.sql` — example analysis queries
+- `schema.sql` — database tables  
+- `seed.sql` — sample data  
+- `queries/analysis.sql` — example analysis queries  
 
 ---
 
@@ -69,9 +69,9 @@ sql-retail-analytics/
    ├─ overview.png
    └─ top_products.png
 Notes
-This repo is SQLite-first. If you prefer Postgres, switch date columns to DATE and use a surrogate BIGSERIAL for order_items.line_id.
+SQLite-first. For Postgres, switch date columns to DATE and use a surrogate BIGSERIAL for order_items.line_id.
 
-retail.db, backups, and OS files should be ignored via .gitignore.
+Local files like retail.db, backups, and .DS_Store should be in .gitignore.
 
 License
 MIT — use, learn, and adapt freely.

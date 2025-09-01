@@ -5,46 +5,73 @@ Includes schema, sample data, and queries to answer key business questions.
 
 ---
 
-## Files
-- `schema.sql` → database tables  
-- `seed.sql` → sample data  
-- `queries/analysis.sql` → analysis queries  
+## Highlights
+- Data modeling with customers, orders, products, regions, and order_items
+- Business questions answered with joins, aggregates, and CTEs
+- Screenshot-ready queries for your portfolio
 
 ---
 
-## How to Run
+## Files
+- `schema.sql` — database tables
+- `seed.sql` — sample data
+- `queries/analysis.sql` — example analysis queries
+
+---
+
+## How to Run (SQLite)
+
 ```bash
-# SQLite
+# 1) Create and load the database
 sqlite3 retail.db < schema.sql
 sqlite3 retail.db < seed.sql
+
+# 2) (Option A) Run all sample queries and export to CSV
 sqlite3 -header -csv retail.db < queries/analysis.sql > results.csv
-Insights
-Queries cover:
 
-Top customers & revenue trends
+# 2) (Option B) Open an interactive shell for screenshots
+sqlite3 retail.db
+.headers on
+.mode box
+SELECT COUNT(*) AS customers FROM customers;
+SELECT COUNT(*) AS orders FROM orders;
+Tip: Use .mode box (or .mode column) for nice terminal screenshots.
 
-Product sales ranking
+Questions Answered
+Top customers by lifetime revenue
+
+Monthly revenue trend
+
+Top products by revenue (and % of total)
 
 Average order value by region
 
-Repeat purchases & retention
+Revenue lost to discounts
 
-Discount impact
-
-Purpose
-Built as a portfolio project to showcase SQL skills in data modeling, joins, CTEs, and business analysis.
+Screenshots
+SQLite overview
 
 
 
----
+Top products by revenue
 
 
-## Screenshots
 
-**SQLite overview**
+Project Structure
+pgsql
+Copy code
+sql-retail-analytics/
+├─ schema.sql
+├─ seed.sql
+├─ queries/
+│  └─ analysis.sql
+└─ images/
+   ├─ overview.png
+   └─ top_products.png
+Notes
+This repo is SQLite-first. If you prefer Postgres, switch date columns to DATE and use a surrogate BIGSERIAL for order_items.line_id.
 
-![SQLite overview](images/overview.png)
+retail.db, backups, and OS files should be ignored via .gitignore.
 
-**Top products by revenue**
-
-![Top products by revenue](images/top_products.png)
+License
+MIT — use, learn, and adapt freely.
